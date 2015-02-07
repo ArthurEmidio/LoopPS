@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 # Função responsável por retornar um conjunto de bytes como um inteiro
 def getBytesAsInteger(file, quantity):
 	data = file.read(quantity)

@@ -54,13 +54,13 @@ try:
 		for i in range(0,8):
 			position_in_line += 1
 			
-			# Pular os paddings no fim de cada linha (o código no escopo desse if é inútil para a imagem dada, pois padding = 0)
+			# Pular os paddings no fim de cada linha (as 3 linhas abaixo são inúteis para a imagem dada, pois padding = 0)
 			if position_in_line > bytes_per_line:
 				position_in_line = 0
 				file.seek(file.tell() + padding)
 			
 			byte = file.read(1)
-			char_bin = str(ord(byte) & 1) + char_bin # Obtem o LSB do byte (por meio do operador AND) e o concatena no código binário do caractere
+			char_bin = str(ord(byte) & 1) + char_bin # Obtém o LSB do byte (através do operador AND) e o concatena no código binário do caractere
 
 		char = chr(int(char_bin, 2)) # converte o binário obtido para um caractere
 		message += char # concatena o caractere na mensagem final
